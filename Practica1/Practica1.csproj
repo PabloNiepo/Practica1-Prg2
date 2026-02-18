@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Avion.cs" />
     <Compile Include="Bus.cs" />
+    <Compile Include="Cliente.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
