@@ -9,13 +9,14 @@ namespace Practica1
     [Serializable]
     internal class Avion:Transporte
     {
-        public override string Destino => throw new NotImplementedException();
+        private string NroIdentificacion;
 
-        public Avion(string destino, double precio): base(destino, precio)
+        public Avion(string destino, double precio, string NroIden) : base(destino, precio, NroIden)
         {
             this.destino = destino;
             this.preciobase = precio;
-
+            this.patente = NroIden;
+         
         }
         public override double PrecioFinal()
         {
@@ -24,7 +25,7 @@ namespace Practica1
 
         public override string ToString()
         {
-            return "Avion: " + "Patente: "+patente;
+            return "Avion: " + "Ident: "+patente;
         }
 
     }

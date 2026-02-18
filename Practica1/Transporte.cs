@@ -13,15 +13,15 @@ namespace Practica1
         protected string destino;
         protected string patente;
 
-        protected Transporte(string destino, double precio)
+        protected Transporte(string destino, double precio, string patente)
         {
             this.destino = destino;
             this.preciobase = precio;
+            this.patente = patente;
         }
 
-        public abstract string Destino { get; }
+        protected string Destino { get { return destino; } }
 
         public abstract double PrecioFinal();
-
     }
 }

@@ -9,17 +9,19 @@ namespace Practica1
     [Serializable]
     internal class Bus : Transporte
     {
-        public override string Destino => throw new NotImplementedException();
+        private string estrellas;
+        
 
-        public Bus(string destino, double precio) : base(destino, precio)
+        public Bus(string destino, double precio, string patente, string estrellas) : base(destino, precio, patente)
         {
             this.destino = destino;
             this.preciobase = precio;
-
+            this.patente = patente;
+            this.estrellas = estrellas;
         }
         public override double PrecioFinal()
         {
-            return preciobase + (preciobase * 0.21) + (preciobase * .30);
+            return preciobase + (preciobase * 0.115) + (preciobase * .30);
         }
 
         public override string ToString()
