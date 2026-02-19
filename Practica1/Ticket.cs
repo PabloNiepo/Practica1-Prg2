@@ -11,25 +11,35 @@ namespace Practica1
     internal class Ticket
     {
         private DateTime fecha;
-        private double precioFinal;
+        private Cliente cliente;
+        private Transporte transporte;
+        /*private double precioFinal;
         private string destino;
         private string transporte;
-        private Cliente cliente;
+        private Cliente cliente;*/
 
-        public Ticket()
+        public Ticket(Transporte transporte, Cliente cliente)
         {
             fecha = DateTime.Now;
-            precioFinal = 0;
+            this.cliente = cliente;
+            this.transporte = transporte;
             
         }
 
         public override string ToString()
         {
-            return @"
-                     ---------------------------------
-                      Agencia de viajes Final PRG II
-                     ---------------------------------
-             ";
+            return $@"---------------------------------
+Agencia de viajes Final PRG II
+---------------------------------
+
+Fecha: {fecha}
+
+Cliente:
+{cliente}
+
+Transporte: {transporte?.GetType().Name}
+Precio final: {transporte?.PrecioFinal():C}
+";
         }
     }
 }

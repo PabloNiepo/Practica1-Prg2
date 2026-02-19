@@ -37,13 +37,13 @@
             this.btnGen = new System.Windows.Forms.Button();
             this.btnResumen = new System.Windows.Forms.Button();
             this.groupBoxPjero = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtCuil = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtTel = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtCuil = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBoxPjero.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,10 +77,16 @@
             // cbDestino
             // 
             this.cbDestino.FormattingEnabled = true;
+            this.cbDestino.Items.AddRange(new object[] {
+            "Buenos Aires",
+            "Madrid",
+            "Rosario",
+            "Calafate"});
             this.cbDestino.Location = new System.Drawing.Point(101, 20);
             this.cbDestino.Name = "cbDestino";
             this.cbDestino.Size = new System.Drawing.Size(121, 21);
             this.cbDestino.TabIndex = 3;
+            this.cbDestino.SelectedIndexChanged += new System.EventHandler(this.cbDestino_SelectedIndexChanged);
             // 
             // cbTransporte
             // 
@@ -105,6 +111,7 @@
             this.btnGen.TabIndex = 6;
             this.btnGen.Text = "Generar";
             this.btnGen.UseVisualStyleBackColor = true;
+            this.btnGen.Click += new System.EventHandler(this.btnGen_Click);
             // 
             // btnResumen
             // 
@@ -131,32 +138,26 @@
             this.groupBoxPjero.TabStop = false;
             this.groupBoxPjero.Text = "Datos pasajero:";
             // 
-            // label4
+            // txtTel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Cuit/Cuil";
+            this.txtTel.Location = new System.Drawing.Point(126, 90);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(100, 20);
+            this.txtTel.TabIndex = 6;
             // 
-            // label5
+            // txtNombre
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 64);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Nombre:";
+            this.txtNombre.Location = new System.Drawing.Point(123, 64);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 5;
             // 
-            // label6
+            // txtCuil
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 95);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Teléfono:";
+            this.txtCuil.Location = new System.Drawing.Point(123, 36);
+            this.txtCuil.Name = "txtCuil";
+            this.txtCuil.Size = new System.Drawing.Size(100, 20);
+            this.txtCuil.TabIndex = 4;
             // 
             // label7
             // 
@@ -167,26 +168,32 @@
             this.label7.TabIndex = 3;
             this.label7.Text = "N° Tarjeta:";
             // 
-            // txtCuil
+            // label6
             // 
-            this.txtCuil.Location = new System.Drawing.Point(123, 36);
-            this.txtCuil.Name = "txtCuil";
-            this.txtCuil.Size = new System.Drawing.Size(100, 20);
-            this.txtCuil.TabIndex = 4;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(20, 95);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Teléfono:";
             // 
-            // txtNombre
+            // label5
             // 
-            this.txtNombre.Location = new System.Drawing.Point(123, 64);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 5;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(20, 64);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Nombre:";
             // 
-            // txtTel
+            // label4
             // 
-            this.txtTel.Location = new System.Drawing.Point(126, 90);
-            this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(100, 20);
-            this.txtTel.TabIndex = 6;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Cuit/Cuil";
             // 
             // Form1
             // 
@@ -204,6 +211,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBoxPjero.ResumeLayout(false);
             this.groupBoxPjero.PerformLayout();
             this.ResumeLayout(false);

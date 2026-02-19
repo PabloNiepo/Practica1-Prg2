@@ -16,5 +16,25 @@ namespace Practica1
         {
             InitializeComponent();
         }
+        private void btnGenerarTicket_Click(object sender, EventArgs e)
+        {
+            // Aquí puedes agregar la lógica para generar un ticket
+            MessageBox.Show("¡Ticket generado!");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbDestino_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGen_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

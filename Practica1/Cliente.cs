@@ -23,11 +23,7 @@ namespace Practica1
 
         public override string ToString()
         {
-            return @"
-                     ---------------------------------
-                      Agencia de viajes Final PRG II
-                     ---------------------------------
-             ";
+            return $"Nombre: {nombre}\nCUIT: {CUIT}\nTelefono: {telefono}\nTipo: {tc}";
         }
     }
 }
